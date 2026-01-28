@@ -1,0 +1,166 @@
+/* .navbar {
+  background-color: #222;
+  padding: 15px 20px;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+.navbar li a {
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+.navbar li a:hover {
+  color: #00bfff;
+}
+.navbar .active a {
+  color: #00bfff;
+  font-weight: bold;
+} */
+
+/* src/components/Navbar.css */
+/* NAVBAR */
+.navbar {
+  background: #1a1a1a;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* CONTAINER */
+.navbar-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0.8rem 1.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+/* LOGO */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-logo img {
+  width: 42px;
+  height: 42px;
+  margin-right: 10px;
+}
+
+.brand-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f1c40f;
+  letter-spacing: 1px;
+}
+
+/* NAV LINKS (CENTERED) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #fff;
+  padding-bottom: 4px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* ACTIVE PAGE */
+.nav-link.active {
+  color: #f1c40f;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #f1c40f;
+  left: 0;
+  bottom: -6px;
+}
+
+/* HOVER */
+.nav-link:hover {
+  color: #f1c40f;
+}
+
+/* RIGHT SIDE */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* CART ICON */
+.cart-icon {
+  position: relative;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.cart-icon:hover {
+  color: #f1c40f;
+}
+
+/* CART BADGE */
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #ff3d00;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* MOBILE MENU ICON */
+.menu-icon {
+  display: none;
+  font-size: 1.7rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #1a1a1a;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
