@@ -33,37 +33,6 @@ export default function Product() {
   const { cart = [], addToCart } = useCart();
 
   const categories = ["All", "Namkeen", "Bhujiya", "Mixtures", "Snacks"];
-
-  const products = [
-    { id: 1, name: "Namkeen Mix", category: "Mixtures", desc: "A perfect blend of spices and crunch.", weight: "500g", price: 120, img: GadbadMixture, isOffer: true },
-    { id: 2, name: "Bhujiya Sev", category: "Bhujiya", desc: "Crispy, golden, authentic flavor.", weight: "400g", price: 90, img: BesanBhujiya, isOffer: false },
-    { id: 3, name: "Aloo Bhujiya", category: "Bhujiya", desc: "Potato-based crunchy snack.", weight: "450g", price: 100, img: AlooBhujiya, isOffer: false },
-    { id: 4, name: "Moong Dal", category: "Snacks", desc: "Crispy fried moong dal.", weight: "400g", price: 110, img: MoongDal, isOffer: false },
-    { id: 5, name: "Masala Peanuts", category: "Snacks", desc: "Spicy roasted peanuts.", weight: "500g", price: 130, img: HeengDana, isOffer: true },
-    { id: 6, name: "Punjabi Tadka", category: "Namkeen", desc: "Light & crunchy tea-time snack.", weight: "500g", price: 115, img: PunjabiTadka, isOffer: false },
-    { id: 7, name: "Navratan Mix", category: "Mixtures", desc: "Royal mix of 9 premium ingredients.", weight: "500g", price: 125, img: Navratan, isOffer: false },
-    { id: 8, name: "Khatta Meetha", category: "Mixtures", desc: "Sweet & tangy classic namkeen.", weight: "400g", price: 95, img: KhattaMeetha, isOffer: false },
-    { id: 9, name: "Sem Seeds", category: "Namkeen", desc: "Premium roasted cashews with light salt.", weight: "250g", price: 220, img: SemBeej, isOffer: false },
-    { id: 11, name: "Heeng Sev", category: "Bhujiya", desc: "Aromatic hing-flavored sev with extra crunch.", weight: "400g", price: 105, img: HeengSev, isOffer: false },
-    { id: 12, name: "Badam Mixture", category: "Mixtures", desc: "Rich mixture loaded with crunchy almonds.", weight: "500g", price: 150, img: BadamMixture, isOffer: false },
-    { id: 13, name: "Besan Bhujiya", category: "Bhujiya", desc: "Traditional besan bhujia with bold spices.", weight: "400g", price: 95, img: BesanBhujiya, isOffer: false },
-    { id: 14, name: "Besan Daana", category: "Snacks", desc: "Crunchy fried besan pearls.", weight: "400g", price: 90, img: BesanDaana, isOffer: false },
-    { id: 15, name: "Besan Gathiya", category: "Namkeen", desc: "Soft yet crispy besan gathiya.", weight: "500g", price: 110, img: BesanGathiya, isOffer: false },
-    { id: 16, name: "Bhakarbadi", category: "Snacks", desc: "Spicy rolled snack with traditional masala.", weight: "400g", price: 120, img: Bhakharbadi, isOffer: false },
-    { id: 17, name: "Kaju Maheen", category: "Namkeen", desc: "Thin sev blended with premium cashews.", weight: "500g", price: 160, img: CasewMaheen, isOffer: true },
-    { id: 18, name: "Chana Dal", category: "Snacks", desc: "Crunchy roasted chana dal.", weight: "400g", price: 100, img: ChanaDal, isOffer: false },
-    { id: 19, name: "Chana Jor Garam", category: "Namkeen", desc: "Flat fried spicy chana snack.", weight: "400g", price: 95, img: ChanaJorGaram, isOffer: false },
-    { id: 20, name: "Gadbad Mixture", category: "Mixtures", desc: "Fun mix of multiple crunchy elements.", weight: "500g", price: 130, img: GadbadMixture, isOffer: false },
-    { id: 21, name: "Hara Matar", category: "Snacks", desc: "Crispy fried green peas.", weight: "400g", price: 90, img: HaraMatar, isOffer: true },
-    { id: 22, name: "Hara Moong Mixture", category: "Mixtures", desc: "Protein-rich green moong snack.", weight: "500g", price: 115, img: HaraMoongMixture, isOffer: false },
-    { id: 23, name: "Heeng Dana", category: "Snacks", desc: "Hing flavored crunchy dana.", weight: "400g", price: 95, img: HeengDana, isOffer: false },
-    { id: 24, name: "Heeng Maheen", category: "Namkeen", desc: "Fine sev with strong hing aroma.", weight: "400g", price: 100, img: HeengMahin, isOffer: false },
-    { id: 25, name: "Kaju Dalmoth", category: "Namkeen", desc: "Premium dalmoth enriched with cashews.", weight: "500g", price: 170, img: KajuDalmoth, isOffer: true },
-    { id: 26, name: "Lehsun Mixture", category: "Mixtures", desc: "Garlic-flavored spicy mixture.", weight: "500g", price: 120, img: LehsunMixture, isOffer: false },
-    { id: 27, name: "Paneer Bhujiya", category: "Bhujiya", desc: "Special bhujia with paneer flavor.", weight: "400g", price: 140, img: PaneerBhujiya, isOffer: false },
-    { id: 28, name: "Potato Chips", category: "Snacks", desc: "Classic crispy salted potato chips.", weight: "300g", price: 80, img: PotatoChips, isOffer: true },
-  ];
-
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("popular");
@@ -78,6 +47,36 @@ export default function Product() {
       : text.split(" ").slice(0, words).join(" ") + "…";
 
   const filteredProducts = useMemo(() => {
+    const products = [
+      { id: 1, name: "Namkeen Mix", category: "Mixtures", desc: "A perfect blend of spices and crunch.", weight: "500g", price: 120, img: GadbadMixture, isOffer: true },
+      { id: 2, name: "Bhujiya Sev", category: "Bhujiya", desc: "Crispy, golden, authentic flavor.", weight: "400g", price: 90, img: BesanBhujiya, isOffer: false },
+      { id: 3, name: "Aloo Bhujiya", category: "Bhujiya", desc: "Potato-based crunchy snack.", weight: "450g", price: 100, img: AlooBhujiya, isOffer: false },
+      { id: 4, name: "Moong Dal", category: "Snacks", desc: "Crispy fried moong dal.", weight: "400g", price: 110, img: MoongDal, isOffer: false },
+      { id: 5, name: "Masala Peanuts", category: "Snacks", desc: "Spicy roasted peanuts.", weight: "500g", price: 130, img: HeengDana, isOffer: true },
+      { id: 6, name: "Punjabi Tadka", category: "Namkeen", desc: "Light & crunchy tea-time snack.", weight: "500g", price: 115, img: PunjabiTadka, isOffer: false },
+      { id: 7, name: "Navratan Mix", category: "Mixtures", desc: "Royal mix of 9 premium ingredients.", weight: "500g", price: 125, img: Navratan, isOffer: false },
+      { id: 8, name: "Khatta Meetha", category: "Mixtures", desc: "Sweet & tangy classic namkeen.", weight: "400g", price: 95, img: KhattaMeetha, isOffer: false },
+      { id: 9, name: "Sem Seeds", category: "Namkeen", desc: "Premium roasted cashews with light salt.", weight: "250g", price: 220, img: SemBeej, isOffer: false },
+      { id: 11, name: "Heeng Sev", category: "Bhujiya", desc: "Aromatic hing-flavored sev with extra crunch.", weight: "400g", price: 105, img: HeengSev, isOffer: false },
+      { id: 12, name: "Badam Mixture", category: "Mixtures", desc: "Rich mixture loaded with crunchy almonds.", weight: "500g", price: 150, img: BadamMixture, isOffer: false },
+      { id: 13, name: "Besan Bhujiya", category: "Bhujiya", desc: "Traditional besan bhujia with bold spices.", weight: "400g", price: 95, img: BesanBhujiya, isOffer: false },
+      { id: 14, name: "Besan Daana", category: "Snacks", desc: "Crunchy fried besan pearls.", weight: "400g", price: 90, img: BesanDaana, isOffer: false },
+      { id: 15, name: "Besan Gathiya", category: "Namkeen", desc: "Soft yet crispy besan gathiya.", weight: "500g", price: 110, img: BesanGathiya, isOffer: false },
+      { id: 16, name: "Bhakarbadi", category: "Snacks", desc: "Spicy rolled snack with traditional masala.", weight: "400g", price: 120, img: Bhakharbadi, isOffer: false },
+      { id: 17, name: "Kaju Maheen", category: "Namkeen", desc: "Thin sev blended with premium cashews.", weight: "500g", price: 160, img: CasewMaheen, isOffer: true },
+      { id: 18, name: "Chana Dal", category: "Snacks", desc: "Crunchy roasted chana dal.", weight: "400g", price: 100, img: ChanaDal, isOffer: false },
+      { id: 19, name: "Chana Jor Garam", category: "Namkeen", desc: "Flat fried spicy chana snack.", weight: "400g", price: 95, img: ChanaJorGaram, isOffer: false },
+      { id: 20, name: "Gadbad Mixture", category: "Mixtures", desc: "Fun mix of multiple crunchy elements.", weight: "500g", price: 130, img: GadbadMixture, isOffer: false },
+      { id: 21, name: "Hara Matar", category: "Snacks", desc: "Crispy fried green peas.", weight: "400g", price: 90, img: HaraMatar, isOffer: true },
+      { id: 22, name: "Hara Moong Mixture", category: "Mixtures", desc: "Protein-rich green moong snack.", weight: "500g", price: 115, img: HaraMoongMixture, isOffer: false },
+      { id: 23, name: "Heeng Dana", category: "Snacks", desc: "Hing flavored crunchy dana.", weight: "400g", price: 95, img: HeengDana, isOffer: false },
+      { id: 24, name: "Heeng Maheen", category: "Namkeen", desc: "Fine sev with strong hing aroma.", weight: "400g", price: 100, img: HeengMahin, isOffer: false },
+      { id: 25, name: "Kaju Dalmoth", category: "Namkeen", desc: "Premium dalmoth enriched with cashews.", weight: "500g", price: 170, img: KajuDalmoth, isOffer: true },
+      { id: 26, name: "Lehsun Mixture", category: "Mixtures", desc: "Garlic-flavored spicy mixture.", weight: "500g", price: 120, img: LehsunMixture, isOffer: false },
+      { id: 27, name: "Paneer Bhujiya", category: "Bhujiya", desc: "Special bhujia with paneer flavor.", weight: "400g", price: 140, img: PaneerBhujiya, isOffer: false },
+      { id: 28, name: "Potato Chips", category: "Snacks", desc: "Classic crispy salted potato chips.", weight: "300g", price: 80, img: PotatoChips, isOffer: true },
+    ];
+
     let list = [...products];
     if (activeCategory !== "All") list = list.filter((p) => p.category === activeCategory);
     if (showOnlyOffers) list = list.filter((p) => p.isOffer);
@@ -89,7 +88,7 @@ export default function Product() {
     if (sortBy === "price-desc") list.sort((a, b) => b.price - a.price);
     if (sortBy === "name") list.sort((a, b) => a.name.localeCompare(b.name));
     return list;
-  }, [activeCategory, searchTerm, sortBy, showOnlyOffers, products]); // ✅ included products
+  }, [activeCategory, searchTerm, sortBy, showOnlyOffers]);
 
   return (
     <div className="product-page">

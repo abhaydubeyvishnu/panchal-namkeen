@@ -19,7 +19,7 @@
 // src/components/Footer.js
 import React from "react";
 import "./Footer.css";
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 function Footer() {
   return (
