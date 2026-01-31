@@ -59,8 +59,8 @@ function Footer() {
           <div className="social-icons">
             <a href="https://www.facebook.com/aprakashifoods?mibextid=ZbWKwL"><FaFacebookF /></a>
             <a href="https://www.instagram.com/aprakashifoods?igsh=MTdzZXprcWt4MzYyMw=="><FaInstagram /></a>
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaLinkedin /></a>
+            {/* <a href="#"><FaTwitter /></a>
+            <a href="#"><FaLinkedin /></a> */}
           </div>
         </div>
       </div>
